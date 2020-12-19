@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: gray;
+}
+#main{
+    width: 300px;
+    height: 90vh;
+    margin: 5vh auto;
+    background-color: aliceblue;
+    box-shadow: -6px 6px 2px #676060;
+}
+
+@media screen and (min-width: 525px){
+    #main{
+        width: 480px;
+    }
+}
+@media screen and (min-width: 768px){
+    #main{
+        width: 700px;
+    }
+}
