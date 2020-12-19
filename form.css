@@ -8,11 +8,86 @@ body {
 }
 #main{
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 90vh;
     margin: 5vh auto;
     background-color: aliceblue;
     box-shadow: -6px 6px 2px #676060;
 }
+.inputContainer{
+    width: 75%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 15px 0;
+}
+.inputContainer input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    padding-top: 32px;
+    outline: none;
+}
+.inputContainer label{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+.inputContainer label::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #0956c1;
+    left: 0;
+    bottom: -1px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+.labelContent{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+
+.inputContainer input:focus + .labels .labelContent, .inputContainer input:valid + .labels .labelContent{
+    transform: translateY(-100%);
+    color: #0956c1;
+}
+
+.inputContainer input:focus + .labels::after, .inputContainer input:valid + .labels::after{
+    transform: translateX(0%);
+}
+
+button:hover{
+    cursor: pointer;
+}
+#submit{
+    width: 75px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#errorsIfAny{
+    width: 75%;
+    height: 35%;
+    align-self: flex-start;
+    margin: auto;
+}
+
+
 
 @media screen and (min-width: 525px){
     #main{
